@@ -15,15 +15,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name = "modules_sequence",
-    sequenceName = "modules_sequence",
+    name = "module_sequence",
+    sequenceName = "module_sequence",
     allocationSize = 1
 )
 @Table(name = "modules")
 public class Modules {
 
     @Id
-    @GeneratedValue(generator="modules_sequence", strategy=GenerationType.AUTO)
+    @GeneratedValue(generator="module_sequence", strategy=GenerationType.AUTO)
     private Integer id;
 
     private String module;

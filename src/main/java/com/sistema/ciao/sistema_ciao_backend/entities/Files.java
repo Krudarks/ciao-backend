@@ -15,15 +15,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name = "files_sequence",
-    sequenceName = "files_sequence",
+    name = "file_sequence",
+    sequenceName = "file_sequence",
     allocationSize = 1
 )
 @Table(name="files")
 public class Files {
 
     @Id
-    @GeneratedValue(generator = "files_sequence", strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "file_sequence", strategy = GenerationType.AUTO)
     private Integer id;
     private String document;
     private String cheksum;

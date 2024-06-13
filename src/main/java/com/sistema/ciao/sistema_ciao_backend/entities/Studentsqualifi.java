@@ -15,11 +15,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name = "user_sequence",
-    sequenceName="user_sequence",
+    name = "studentsqualifi",
+    sequenceName="studentsqualifi",
     allocationSize = 1
  )
- @Table(name = "studentsqualifi")
+ @Table(name = "students_califi")
 public class Studentsqualifi {
 
     @Id

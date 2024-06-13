@@ -15,16 +15,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name = "bitacora_sequence",
-    sequenceName="bitacora_sequence",
-    allocationSize = 1
- )
- @Table(name = "bitacoras")
-public class bitacora {
+        name = "bitacora_sequence",
+        sequenceName = "bitacora_sequence",
+        allocationSize = 1
+)
+@Table(name = "bitacoras")
+public class Bitacora {
 
-     @Id
-    @GeneratedValue(generator="bitacora_sequence", strategy=GenerationType.AUTO)
+    @Id
+    @GeneratedValue(generator = "bitacora_sequence", strategy = GenerationType.AUTO)
     private Integer id;
 
-    
 }

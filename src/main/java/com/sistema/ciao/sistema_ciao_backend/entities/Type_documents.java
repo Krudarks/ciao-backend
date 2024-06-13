@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
     sequenceName = "typedoc_sequence",
     allocationSize=1
 )
-@Table(name="typeDocuments")
+@Table(name="type_documents")
 public class Type_documents {
 
     @Id

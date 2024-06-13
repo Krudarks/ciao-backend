@@ -19,8 +19,8 @@ import lombok.NoArgsConstructor;
     sequenceName = "coursemodtheme_sequence",
     allocationSize = 1
 )
- @Table(name = "course_mod_theme")
-public class Courses_modules_theme {
+ @Table(name = "course_modtheme")
+public class Coursesmodules_theme {
 
     @Id
     @GeneratedValue(generator="coursemodtheme_sequence", strategy=GenerationType.AUTO)

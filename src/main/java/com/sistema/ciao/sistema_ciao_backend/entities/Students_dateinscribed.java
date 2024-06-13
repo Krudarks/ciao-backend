@@ -15,13 +15,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name = "studentdate_sequence",
-    sequenceName="studentdate_sequence",
+    name = "studentdates_sequence",
+    sequenceName="studentdates_sequence",
     allocationSize = 1
  )
  @Table(name = "studentdate")
 public class Students_dateinscribed {
     @Id
-    @GeneratedValue(generator="studentdate_sequence", strategy=GenerationType.AUTO)
+    @GeneratedValue(generator="studentdates_sequence", strategy=GenerationType.AUTO)
     private Integer id;
 }

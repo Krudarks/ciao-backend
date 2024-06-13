@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
     sequenceName="group_sequence",
     allocationSize = 1
  )
- @Table(name = "group")
+ @Table(name = "groups")
 public class Group {
      @Id
     @GeneratedValue(generator="group_sequence", strategy=GenerationType.AUTO)
