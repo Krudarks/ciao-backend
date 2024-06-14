@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
     allocationSize = 1
 )
 @Table(name="types_payments")
-public class TypePayments {
+public class TypePayment {
 
     @Id
     @GeneratedValue(generator="type_payment_sequence", strategy = GenerationType.AUTO)
