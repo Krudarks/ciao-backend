@@ -23,11 +23,11 @@ import lombok.NoArgsConstructor;
  )
  @Table(name = "groups")
 public class Group {
-     @Id
+    @Id
     @GeneratedValue(generator="group_sequence", strategy=GenerationType.AUTO)
     private Integer id;
 
-    private String group;
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "id_teacher")
