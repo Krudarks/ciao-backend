@@ -20,12 +20,12 @@ import lombok.NoArgsConstructor;
     allocationSize = 1
 )
 @Table(name = "roles")
-public class Roles {
+public class Role {
     
     @Id
     @GeneratedValue(generator="role_sequence", strategy=GenerationType.AUTO)
     private Integer id;
 
-    private String roles;
+    private String role;
     private String description;
 }

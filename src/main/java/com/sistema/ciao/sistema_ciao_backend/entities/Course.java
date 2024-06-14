@@ -26,7 +26,7 @@ public class Course {
     @GeneratedValue(generator="course_sequence", strategy=GenerationType.AUTO)
     private Integer id;
 
-    private String name;
+    private String course;
     private String description;
     
 }
