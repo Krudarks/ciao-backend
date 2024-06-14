@@ -10,21 +10,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name = "payment_sequence",
-    sequenceName = "payment_sequence",
+    name = "module_role_sequence",
+    sequenceName="module_role_sequence",
     allocationSize = 1
-)
-@Table(name="payments")
-public class Payments {
+ )
+ @Table(name = "modules_roles")
+public class ModuleRoles {
 
     @Id
-    @GeneratedValue(generator="payment_sequence", strategy=GenerationType.AUTO)
+    @GeneratedValue(generator="module_role_sequence", strategy=GenerationType.AUTO)
     private Integer id;
-
-    
 }

@@ -15,17 +15,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name = "typepay_sequence",
-    sequenceName = "typepay_sequence",
+    name = "course_module_theme_sequence",
+    sequenceName = "course_module_theme_sequence",
     allocationSize = 1
 )
-@Table(name="type_payment")
-public class Type_payments {
+ @Table(name = "courses_modules_themes")
+public class CourseModuleTheme {
 
     @Id
-    @GeneratedValue(generator="typepay_sequence", strategy = GenerationType.AUTO)
+    @GeneratedValue(generator="course_module_theme_sequence", strategy=GenerationType.AUTO)
     private Integer id;
     
-    private String method;
-    private String status;
+    private String theme;
 }

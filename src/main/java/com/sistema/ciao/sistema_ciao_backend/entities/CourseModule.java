@@ -15,16 +15,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name="typedoc_sequence",
-    sequenceName = "typedoc_sequence",
-    allocationSize=1
+    name = "course_module_sequence",
+    sequenceName = "course_module_sequence",
+    allocationSize = 1
 )
-@Table(name="type_documents")
-public class Type_documents {
+ @Table(name = "courses_modules")
+public class CourseModule {
 
     @Id
-    @GeneratedValue(generator = "typedoc_sequence", strategy = GenerationType.AUTO)
+    @GeneratedValue(generator="course_module_sequence", strategy=GenerationType.AUTO)
     private Integer id;
 
-    private String usuariomodif;
+    private String module;
 }

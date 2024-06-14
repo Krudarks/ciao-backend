@@ -15,17 +15,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @SequenceGenerator(
-    name = "inscribed_sequence",
-    sequenceName = "inscribed_sequence",
-    allocationSize=1
+    name = "teacher_sequence",
+    sequenceName = "teacher_sequence",
+    allocationSize = 1
 )
-@Table(name="inscribeds")
-public class Inscribeds {
+@Table(name = "teachers")
+public class Teacher {
 
     @Id
-    @GeneratedValue(generator = "inscribed_sequence",strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "teacher_sequence", strategy=GenerationType.AUTO)
     private Integer id;
 
-    private String dateinscription;
-
+    private String name;
+    private String lastName;
+    private String phone;
+    private String email;
+    private String CURP;
+    private String cedula;
+    private String sexo;
+    private String ine;
 }
