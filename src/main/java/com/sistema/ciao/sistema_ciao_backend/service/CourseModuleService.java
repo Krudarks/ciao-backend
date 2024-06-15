@@ -17,4 +17,9 @@ public class CourseModuleService {
     public List<CourseModule> finAll() {
         return courseModuleRepository.findAll();
     }
+
+    public Object findAll() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    }
 }

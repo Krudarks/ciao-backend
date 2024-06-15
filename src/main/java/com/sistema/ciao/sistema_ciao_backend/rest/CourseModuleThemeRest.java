@@ -9,16 +9,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sistema.ciao.sistema_ciao_backend.entities.Course;
-import com.sistema.ciao.sistema_ciao_backend.service.CourseService;
+import com.sistema.ciao.sistema_ciao_backend.entities.CourseModuleTheme;
 
 @RestController
-@RequestMapping("/courses/")
-public class CourseRest {
-    @Autowired
-    private CourseService courseService;
-    
-    @GetMapping
-    private ResponseEntity<List<Course>> getAllCourses (){
-        return ResponseEntity.ok(courseService.findAll());
+@RequestMapping("/coursemoduletheme/")
+public class CourseModuleThemeRest {
+
+    public class CourseRest {
+
+        @Autowired
+        private CourseModuleTheme courseModuleTheme;
+
+        @GetMapping
+        private ResponseEntity<List<Course>> getAllCourseModuleTheme() {
+            return ResponseEntity.ok(courseModuleTheme.findAll());
+        }
     }
+
 }

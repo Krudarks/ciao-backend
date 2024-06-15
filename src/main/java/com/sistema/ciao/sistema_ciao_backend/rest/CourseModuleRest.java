@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sistema.ciao.sistema_ciao_backend.entities.Course;
-import com.sistema.ciao.sistema_ciao_backend.service.CourseService;
+import com.sistema.ciao.sistema_ciao_backend.entities.CourseModule;
+import com.sistema.ciao.sistema_ciao_backend.service.CourseModuleService;
 
 @RestController
-@RequestMapping("/courses/")
-public class CourseRest {
+@RequestMapping("/coursemodule/")
+public class CourseModuleRest {
     @Autowired
-    private CourseService courseService;
-    
+    private CourseModuleService courseModuleService;
+
     @GetMapping
-    private ResponseEntity<List<Course>> getAllCourses (){
-        return ResponseEntity.ok(courseService.findAll());
+    private ResponseEntity<List<CourseModule>>getAllCourseModule(){
+        return ResponseEntity.ok(courseModuleService.findAll());
     }
 }
