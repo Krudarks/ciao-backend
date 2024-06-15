@@ -1,5 +1,7 @@
 package com.sistema.ciao.sistema_ciao_backend.entities;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,8 +29,9 @@ public class Document {
     @Id
     @GeneratedValue(generator = "document_sequence", strategy = GenerationType.AUTO)
     private Integer id;
+    private Date fechaDocument; 
 
     @ManyToOne
-    @JoinColumn(name = "id_file")
-    private File file;
+    @JoinColumn(name = "id_file_document")
+    private FileDocument fileDocument;
 }

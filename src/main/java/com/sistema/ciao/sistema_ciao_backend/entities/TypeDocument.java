@@ -28,6 +28,7 @@ public class TypeDocument {
     @GeneratedValue(generator = "type_document_sequence", strategy = GenerationType.AUTO)
     private Integer id;
 
+    private String typeDocument;
     private String usuariomodif;
 
     @ManyToOne

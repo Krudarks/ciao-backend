@@ -1,5 +1,7 @@
 package com.sistema.ciao.sistema_ciao_backend.entities;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,6 +32,8 @@ public class User {
 
     private String email;
     private String password;
+    private String name;
+    private Date fechaDocument; 
     
     @ManyToOne
     @JoinColumn(name = "id_status")

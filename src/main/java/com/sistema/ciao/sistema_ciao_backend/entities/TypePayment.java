@@ -29,6 +29,8 @@ public class TypePayment {
     private Integer id;
     
     private String method;
+    //private String userModificado;
+    //private Date fechaDocument; 
 
     @ManyToOne
     @JoinColumn(name = "id_status")
