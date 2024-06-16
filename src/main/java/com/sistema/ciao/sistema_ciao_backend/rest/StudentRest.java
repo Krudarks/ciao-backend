@@ -12,7 +12,7 @@ import com.sistema.ciao.sistema_ciao_backend.entities.Student;
 import com.sistema.ciao.sistema_ciao_backend.service.StudentService;
 
 @RestController
-@RequestMapping("/teachers/")
+@RequestMapping("/students/")
 public class StudentRest {
     @Autowired
     private StudentService studentService;
