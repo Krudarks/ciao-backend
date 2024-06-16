@@ -14,7 +14,7 @@ public class CourseModuleThemeService {
     @Autowired
     private CourseModuleThemeRepository courseModuleThemeRepository;
 
-    public List<CourseModuleTheme> finAll(){
+    public List<CourseModuleTheme> findAll(){
         return courseModuleThemeRepository.findAll();
     }
 }

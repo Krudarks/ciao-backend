@@ -14,12 +14,7 @@ public class CourseModuleService {
     @Autowired
     private CourseModuleRepository courseModuleRepository;
 
-    public List<CourseModule> finAll() {
+    public List<CourseModule> findAll() {
         return courseModuleRepository.findAll();
-    }
-
-    public Object findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 }
