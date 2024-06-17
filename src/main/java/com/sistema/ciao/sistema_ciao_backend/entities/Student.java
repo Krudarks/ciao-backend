@@ -37,7 +37,7 @@ public class Student {
 
     @OneToOne
     @JoinColumn(name = "id_user")
-    private User user;
+    private UserEntity user;
 
     @ManyToOne
     @JoinColumn(name = "id_sex")
