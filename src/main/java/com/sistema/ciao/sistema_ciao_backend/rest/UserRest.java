@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
 import com.sistema.ciao.sistema_ciao_backend.entities.UserEntity;
 import com.sistema.ciao.sistema_ciao_backend.service.UserService;
 
@@ -20,9 +19,6 @@ import com.sistema.ciao.sistema_ciao_backend.service.UserService;
 public class UserRest {
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     @GetMapping
    public ResponseEntity<List<UserEntity>> getAllUsers() {
