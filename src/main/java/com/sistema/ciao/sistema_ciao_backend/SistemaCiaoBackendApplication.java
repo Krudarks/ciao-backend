@@ -58,7 +58,7 @@ public class SistemaCiaoBackendApplication {
 
 			UserEntity userIrving = UserEntity.builder()
 			.name("irving")
-			.password("123")
+			.password("$2a$10$h7ozmjUlB6tWbvjI2wtH0uGqS8Y8w9XbJyfzxBNdG10wxnb/to4jG")
 			.email("invax25@hotmail.com")
 			.isEnable(true)
 			.accountNoExpired(true)
@@ -69,7 +69,7 @@ public class SistemaCiaoBackendApplication {
 
 			UserEntity userAnuar = UserEntity.builder()
 			.name("anuar")
-			.password("123456")
+			.password("$2a$10$Hgnxkgs84he8AO.anPLLv.a6Wx46adcBefaofd8xQ84cU0zyA3EYa")
 			.email("invax24@hotmail.com")
 			.isEnable(true)
 			.accountNoExpired(true)

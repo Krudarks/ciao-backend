@@ -1,5 +1,6 @@
 package com.sistema.ciao.sistema_ciao_backend.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -12,16 +13,22 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+import com.sistema.ciao.sistema_ciao_backend.config.filter.JwtTokensValidator;
 import com.sistema.ciao.sistema_ciao_backend.service.UserDetailsServiceImpl;
+import com.sistema.ciao.sistema_ciao_backend.util.JwtUtils;
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+    @Autowired
+    private JwtUtils jwtUtils;
 
     //FORMA DE CONFIGURAR LOS END POINTS DIRECTO EN SECURITYCONFIG
     @Bean
@@ -32,13 +39,14 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(http -> {
                     //Configurar end points publicos
-                    http.requestMatchers(HttpMethod.GET, "/roles/").permitAll();
+                    http.requestMatchers(HttpMethod.POST, "/auth/log-in").permitAll();
                     //Configurar end points privados
                     http.requestMatchers(HttpMethod.GET, "/students/").hasAuthority("CREATE");
 
                     //Configurar resto de end points no especificados
                     http.anyRequest().authenticated();
                 })
+                .addFilterBefore(new JwtTokensValidator(jwtUtils), BasicAuthenticationFilter.class)
                 .build();
     }
 
@@ -68,17 +76,17 @@ public class SecurityConfig {
 
     
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-
-    }
-
-    //CONTRASEÑA INCRIPTADA , LA USARA DESPUES
     // @Bean
     // public PasswordEncoder passwordEncoder() {
-    //     return new BCryptPasswordEncoder();
+    //     return NoOpPasswordEncoder.getInstance();
 
     // }
+
+    //CONTRASEÑA INCRIPTADA , LA USARA DESPUES
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+
+    }
     
 }
