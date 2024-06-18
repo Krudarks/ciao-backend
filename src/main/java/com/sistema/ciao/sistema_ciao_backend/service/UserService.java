@@ -17,5 +17,9 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    //Metodo para guardar un usuario 
+    public UserEntity saveUser (UserEntity user){
+        return userRepository.save(user);
+    }
 }
 
