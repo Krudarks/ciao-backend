@@ -33,19 +33,10 @@ public class UserRest {
     //Metodo para crear un usuario
     @PostMapping
     public ResponseEntity<String> createUser(@RequestBody UserEntity user) {
-        // Asegurarse de que no se incluye el ID en la solicitud
-        user.setId(null); // Opcionalmente, asegúrate de que el ID se establezca como null para evitar problemas
-
-        // Verificar si el usuario ya existe
         if (userService.userExists(user.getName(), user.getEmail())) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("El usuario ya está registrado");
         } else {
-            // Encriptar la contraseña antes de guardar el usuario
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
-
-            // Guardar el usuario
             UserEntity savedUser = userService.saveUser(user);
-
             return ResponseEntity.ok("Usuario creado exitosamente: " + savedUser.getId());
         }
     }

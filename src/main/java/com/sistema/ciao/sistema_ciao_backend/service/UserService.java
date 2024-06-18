@@ -22,11 +22,12 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    //Metodo para guardar un usuario 
-    public UserEntity saveUser (UserEntity user){
+    public UserEntity saveUser(UserEntity user) {
+        // Encriptar la contraseña antes de guardar el usuario
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
+
     public Optional<UserEntity> findUserByName(String username) {
         return userRepository.findUserByName(username);
     }
@@ -39,4 +40,3 @@ public class UserService {
         return userRepository.findUserByName(username).isPresent() || userRepository.findUserByEmail(email).isPresent();
     }
 }
-
