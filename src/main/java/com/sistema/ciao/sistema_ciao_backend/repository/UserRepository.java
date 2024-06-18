@@ -11,4 +11,6 @@ import com.sistema.ciao.sistema_ciao_backend.entities.UserEntity;
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
     Optional<UserEntity> findUserByName(String username);
+
+    Optional<UserEntity> findUserByEmail(String email);
 }

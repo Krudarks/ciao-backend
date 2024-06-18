@@ -31,7 +31,7 @@ import lombok.NoArgsConstructor;
 public class UserEntity {
 
     @Id
-    @GeneratedValue(generator="user_sequence", strategy=GenerationType.AUTO)
+    @GeneratedValue( strategy=GenerationType.SEQUENCE, generator="user_sequence")
     private Integer id;
 
     private String email;
