@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class Course {
 
     @Id
-    @GeneratedValue(generator="course_sequence", strategy=GenerationType.AUTO)
+    @GeneratedValue(generator="course_sequence", strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     private String course;

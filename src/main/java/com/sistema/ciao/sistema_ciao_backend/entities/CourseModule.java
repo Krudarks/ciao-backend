@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class CourseModule {
 
     @Id
-    @GeneratedValue(generator="course_module_sequence", strategy=GenerationType.AUTO)
+    @GeneratedValue(generator="course_module_sequence", strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     private String courseModule;

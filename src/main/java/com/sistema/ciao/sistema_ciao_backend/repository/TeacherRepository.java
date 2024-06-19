@@ -10,5 +10,5 @@ import com.sistema.ciao.sistema_ciao_backend.entities.Teacher;
 @Repository
 public interface TeacherRepository extends JpaRepository<Teacher, Integer>{
     Optional<Teacher> findTeacherByEmail(String email);
-    Optional<Teacher> findTeacherByCURP(String CURP);
+    Optional<Teacher> findTeacherByCurp(String curp);
 }
