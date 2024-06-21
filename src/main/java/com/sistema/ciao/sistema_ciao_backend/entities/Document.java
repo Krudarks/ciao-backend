@@ -34,4 +34,8 @@ public class Document {
     @ManyToOne
     @JoinColumn(name = "id_file_document")
     private FileDocument fileDocument;
+
+    @ManyToOne
+    @JoinColumn(name = "id_type_document")
+    private TypeDocument typeDocument;
 }

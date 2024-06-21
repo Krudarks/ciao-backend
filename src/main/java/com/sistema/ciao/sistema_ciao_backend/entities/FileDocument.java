@@ -30,10 +30,10 @@ public class FileDocument {
     @GeneratedValue(generator = "file_sequence", strategy = GenerationType.AUTO)
     private Integer id;
     private String document;
-    private String cheksum;
-    private Date fechaDocument; 
+    // private String cheksum;
+    // private Date fechaDocument; 
 
-    @ManyToOne
-    @JoinColumn(name = "id_type_document")
-    private TypeDocument typeDocument;
+    // @ManyToOne
+    // @JoinColumn(name = "id_type_document")
+    // private TypeDocument typeDocument;
 }

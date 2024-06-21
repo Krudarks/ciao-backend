@@ -25,11 +25,10 @@ import lombok.NoArgsConstructor;
 public class TypeDocument {
 
     @Id
-    @GeneratedValue(generator = "type_document_sequence", strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "typedocument_sequence")
     private Integer id;
 
     private String typeDocument;
-    private String usuariomodif;
 
     @ManyToOne
     @JoinColumn(name = "id_status")
